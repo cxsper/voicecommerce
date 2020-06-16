@@ -657,7 +657,7 @@ blob@0.0.5:
   resolved "https://registry.yarnpkg.com/blob/-/blob-0.0.5.tgz#d680eeef25f8cd91ad533f5b01eed48e64caf683"
   integrity sha512-gaqbzQPqOoamawKg0LGVd7SzLgXS+JH61oWprSLH+P+abTczqJbhTR8CmJ2u9/bUYNmHTGJx/UEmn6doAvvuig==
 
-body-parser@1.19.0:
+body-parser@1.19.0, body-parser@^1.19.0:
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
   integrity sha512-dhEPs72UPbDnAQJ9ZKMNTP6ptJaionhP5cBb541nXPlW60Jepo9RV/a4fX4XWW9CuFNK22krhrj1+rgzifNCsw==
@@ -2232,13 +2232,6 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-i18next@^15.0.8:
-  version "15.1.1"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-15.1.1.tgz#2d60cdee151b019e171e44a666ccd6b704ac867a"
-  integrity sha512-yamlJ/hV8IcD7oqOrioR/l6Bn461+PqO3Y62fNb2VwNH+m37biYW4vvVMgSrbSww2HWwnx+VbOK2VUoxfvd1wQ==
-  dependencies:
-    "@babel/runtime" "^7.3.1"
-
 i18next@^19.0.2:
   version "19.4.5"
   resolved "https://registry.yarnpkg.com/i18next/-/i18next-19.4.5.tgz#f9ea8bbb48d1ec66bc3436f0bb74a16b11821e11"
@@ -3013,14 +3006,6 @@ jest@23.6.0:
     import-local "^1.0.0"
     jest-cli "^23.6.0"
 
-jovo-cms-i18next@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/jovo-cms-i18next/-/jovo-cms-i18next-2.2.5.tgz#279d4865ac653147cb8f3b1262247d7d5d50b34e"
-  integrity sha512-QGPwtSPffhrBHwNtLGGBmKs3Ly/F360BGzCjA6tMULe1kNTfSd9CJoA8lv+RSQJNdEMPOW6/idPWI6bK/zCK+Q==
-  dependencies:
-    i18next "^15.0.8"
-    jovo-core "^2.2.4"
-
 jovo-core@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/jovo-core/-/jovo-core-2.2.4.tgz#764035fe3d7e3be78dbdf75731a07c273216dcd5"
@@ -3057,7 +3042,7 @@ jovo-core@^3.0.16:
     lodash.set "^4.3.2"
     lodash.transform "^4.6.0"
 
-jovo-db-filedb@^2.0.2, jovo-db-filedb@^2.2.4:
+jovo-db-filedb@^2.0.2:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/jovo-db-filedb/-/jovo-db-filedb-2.2.4.tgz#45109d62432b4313ec2a70ecf7747161ee6b34f0"
   integrity sha512-yNssRjR0gUK7bD8WiVybvDXnLodVlzckFQEq+4VFh24umV56Ok7EZlobPhUYQ7Z/Y1nfItbqXPSTwA+1A1Vh0A==
@@ -3067,18 +3052,31 @@ jovo-db-filedb@^2.0.2, jovo-db-filedb@^2.2.4:
     lodash.merge "^4.6.1"
     lodash.set "^4.3.2"
 
-jovo-framework@^2.2.5:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/jovo-framework/-/jovo-framework-2.2.6.tgz#5c4336d97efb65da8c05794bfcb5c780d28c3060"
-  integrity sha512-gxhwbHYi6iuWqu2xNnWbxOl3bXY9K5K3rHPGWXJfVxeQ2M511uMi6wQmOtRKihc6GZ/iGw219LC9ews8rtiP6A==
+jovo-db-filedb@^3.0.17:
+  version "3.0.17"
+  resolved "https://registry.yarnpkg.com/jovo-db-filedb/-/jovo-db-filedb-3.0.17.tgz#c5092e96417011708d2c4e1c104b1207b81b3feb"
+  integrity sha512-/Nm590XfGWBNHuYjvvrZ2cZlFr6R0GOA4BVQcVQ2RiST7ln6cgncs14/frSQk0ie/lT7e3BHq3cmhyJSdkoEEg==
+  dependencies:
+    jovo-core "^3.0.16"
+    lodash.get "^4.4.2"
+    lodash.merge "^4.6.2"
+    lodash.set "^4.3.2"
+
+jovo-framework@^3.0.0:
+  version "3.0.18"
+  resolved "https://registry.yarnpkg.com/jovo-framework/-/jovo-framework-3.0.18.tgz#aa0dad50bba7719a23bbdbab7f7c34ec38c54058"
+  integrity sha512-hJXdO22NXbFrR4UVNb4PndUD7r1tjG/83KDMESgYyA/HHVrBmRQlUWUznhYr3cEQOBcHgHYmc5geOTOTsEYO8Q==
   dependencies:
     "@azure/functions" "^1.0.1-beta2"
+    body-parser "^1.19.0"
     express "^4.16.3"
-    jovo-cms-i18next "^2.2.5"
-    jovo-core "^2.2.4"
-    jovo-db-filedb "^2.2.4"
+    jovo-core "^3.0.16"
+    jovo-db-filedb "^3.0.17"
+    lodash.clonedeep "^4.5.0"
     lodash.get "^4.4.2"
+    lodash.merge "^4.6.2"
     lodash.set "^4.3.2"
+    lodash.unset "^4.5.2"
 
 jovo-platform-alexa@^3.0.0:
   version "3.0.21"
@@ -3513,6 +3511,11 @@ lodash.unionwith@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.unionwith/-/lodash.unionwith-4.6.0.tgz#74d140b5ca8146e6c643c3724f5152538d9ac1f0"
   integrity sha1-dNFAtcqBRubGQ8NyT1FSU42awfA=
+
+lodash.unset@^4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/lodash.unset/-/lodash.unset-4.5.2.tgz#370d1d3e85b72a7e1b0cdf2d272121306f23e4ed"
+  integrity sha1-Nw0dPoW3Kn4bDN8tJyEhMG8j5O0=
 
 lodash.zip@^4.2.0:
   version "4.2.0"
